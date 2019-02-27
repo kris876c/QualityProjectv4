@@ -7,7 +7,7 @@ using Domain;
 
 namespace Application
 {
-    class CustomerRepo
+    public class CustomerRepo
     {
         private List<Customer> customerList = new List<Customer>();
 

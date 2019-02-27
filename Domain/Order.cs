@@ -15,6 +15,15 @@ namespace Domain
         public string DeliveryDate { get; set; }
         public bool Picked { get; set; }
 
+		public Order (Customer customer, int orderId, string orderDate, string deliveryDate, bool picked)
+		{
+			Customer = customer;
+			OrderId = orderId;
+			OrderDate = orderDate;
+			DeliveryDate = deliveryDate;
+			Picked = picked;
+		}
+
         public void AddOrderLine(Product product, int quantity, int price)
         {
             SaleOrderLine saleOrderLine = new SaleOrderLine(product, quantity, price);

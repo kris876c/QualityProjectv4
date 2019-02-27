@@ -9,23 +9,9 @@
     <Grid>
         <Button Content="back" HorizontalAlignment="Left" Margin="50,50,0,0" VerticalAlignment="Top" Width="75"/>
         <Label Content="Kunde Nr. " HorizontalAlignment="Left" Margin="304,21,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="Tilføj_Produkt" Content="Tilføj Produkt" HorizontalAlignment="Left" Margin="149,372,0,0" VerticalAlignment="Top" Width="75" Click="Tilføj_Produkt_Click"/>
-        <Button x:Name="Bekræft_Ordre" Content="Bekræft Ordre" HorizontalAlignment="Left" Margin="618,369,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="Slet_Produkt" Content="Slet Produkt" HorizontalAlignment="Left" Margin="489,369,0,0" VerticalAlignment="Top" Width="75"/>
-        <ListView x:Name="ProductList" HorizontalAlignment="Left" Height="294" Margin="149,70,0,0" VerticalAlignment="Top" Width="229">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <ListView x:Name="ConfirmedProductList" HorizontalAlignment="Left" Height="294" Margin="489,70,0,0" VerticalAlignment="Top" Width="229">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="238,238,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="404,144,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="404,176,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
 
 
 
