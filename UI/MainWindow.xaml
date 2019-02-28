@@ -15,6 +15,7 @@
         <Button x:Name="ModtagOrdre" Content="Modtag Ordre" HorizontalAlignment="Left" Margin="184,173,0,0" VerticalAlignment="Top" Width="91" Height="30" Click="ModtagOrdreKnap"/>
         <Button Content="Find Kunde" HorizontalAlignment="Left" Margin="570,173,0,0" VerticalAlignment="Top" Width="91" Height="30" Click="FindKundeKnap"/>
         <Label Content="Søg efter kunde" HorizontalAlignment="Left" Margin="570,142,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="VisOrdreKnap" Content="Vis ordre" HorizontalAlignment="Left" Margin="570,284,0,0" VerticalAlignment="Top" Width="75" Click="VisOrdreKnap_Click"/>
 
 
     </Grid>

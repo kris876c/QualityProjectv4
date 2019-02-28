@@ -22,6 +22,7 @@ namespace Application
 			return instance;
 		}
         CustomerRepo customerRepo = new CustomerRepo();
+		OrderRepo orderRepo = new OrderRepo();
         public bool CheckCustomerID(int customerID)
         {
             if (customerRepo.GetCustomer(customerID) == null)
@@ -46,5 +47,19 @@ namespace Application
 		{
 			return null;
 		}
-    }
+		public int GetCountOfOrders()
+		{
+			return orderRepo.GetCountOfOrders()+1;
+		}
+		public void CreateOrdre(Customer customer, int orderId, string orderDate, string deliveryDate, bool picked)
+		{
+			Order order = new Order(customer, orderId, orderDate, deliveryDate, false);
+			orderRepo.AddOrder(order);
+		}
+		public Customer GetCustomerByID(int id)
+		{
+			return customerRepo.GetSpecificCustomer(id);
+		}
+
+	}
 }

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Application;
 
 namespace UI
 {
@@ -19,25 +20,32 @@ namespace UI
     /// </summary>
     public partial class NewOrderWindow : Window
     {
-        public NewOrderWindow()
+		
+		public NewOrderWindow()
         {
             InitializeComponent();
+			
         }
-        private void button_Back_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow main = new MainWindow();
-            main.Show();
-            this.Close();
-        }
+      
 
-        private void Tilføj_Produkt_Click(object sender, RoutedEventArgs e)
-        {
-            this.ProductList.ItemsSource = new List<string>()
-            {
-            "carrot",
-            "fox",
-            "explorer"
-            };
-        }
+		private void CreateOrder(object sender, RoutedEventArgs e)
+		{
+			MainWindow main = new MainWindow();
+			OrdreIDtxtb.Text = Controller.GetController().GetCountOfOrders().ToString();
+			BestillingsDatotxtb.Text = DateTime.Today.ToString();
+			LeveringsDatotxtb.Text = DateTime.Today.AddDays(5).ToString();
+
+			Controller.GetController().CreateOrdre(Controller.GetController().GetCustomerByID(int.Parse(KundeIDtxtb.Text)), 
+				int.Parse(OrdreIDtxtb.Text), BestillingsDatotxtb.Text, LeveringsDatotxtb.Text, false);
+
+		}
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			MainWindow main = new MainWindow();
+			main.Show();
+			this.Close();
+		}
+	}
     }
-}
+
