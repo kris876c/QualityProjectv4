@@ -9,6 +9,7 @@ namespace Application
 {
     public class Controller
     {
+		OrderRepo orderRepo = new OrderRepo();
         OrderLineRepo orderline = new OrderLineRepo();
         CustomerRepo customerRepo = new CustomerRepo();
         ProductRepo productRepo = new ProductRepo();
@@ -72,6 +73,10 @@ namespace Application
             }
             return orderlineString;
         }
+		public List<Order> GetOrderList()
+		{
+			return orderRepo.GetOrderList();
+		}
     }
 }
             
