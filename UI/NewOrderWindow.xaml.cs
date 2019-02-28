@@ -36,12 +36,7 @@ namespace UI
         private void ProductList_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
             int kundeNr = int.Parse(kundeNrBox.Text);
-            foreach (object orderline in orderline.GetAllOrderLines)
-            {
-
-            }
-            ProductList.Items.Add()
+            ProductList.Items.Add(Controller.GetController().CreateOrderLine(kundeNr));
         }
-
     }
 }

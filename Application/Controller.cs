@@ -55,22 +55,22 @@ namespace Application
         public string CreateOrderLine(int customerId)
         {
             string name = null;
-            object price = null; 
-            object quantity = null; 
-            string orderlineString = name + price + quantity;
+            string price = null; 
+            string quantity = null; 
+            string orderlineString = null;
             productList = productRepo.GetAllProducts(customerId);
             saleOrderLines = orderline.GetAllOrderLines(customerId);
-            while(name == null)
+            while(orderlineString == null)
             {
                 foreach (SaleOrderLine orderline in saleOrderLines)
                 {
-                    if(orderline.OrderLineId )
+                    name = orderline.Product.Name;
+                    price = orderline.Price.ToString();
+                    quantity = orderline.Quantity.ToString();
+                    orderlineString = name + " " + price + " " + quantity + " ";
                 }
             }
-            foreach (Product product in productList)
-            {
-                name = .Name;
-            }
+            return orderlineString;
         }
     }
 }
