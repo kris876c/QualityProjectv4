@@ -7,21 +7,26 @@ using Domain;
 
 namespace Application
 {
-	public class Controller
-	{
-		private static Controller instance;
-		protected Controller()
-		{
-		}
-		public static Controller GetController()
-		{
-			if(instance == null)
-			{
-				instance = new Controller();
-			}
-			return instance;
-		}
+    public class Controller
+    {
+        OrderLineRepo orderline = new OrderLineRepo();
         CustomerRepo customerRepo = new CustomerRepo();
+        ProductRepo productRepo = new ProductRepo();
+        private List<SaleOrderLine> saleOrderLines;
+        private List<Product> productList;
+        private static Controller controller;
+        protected Controller()
+        {
+        }
+        public static Controller GetController()
+        {
+            if (controller == null)
+            {
+                controller = new Controller();
+            }
+            return controller;
+        }
+
         public bool CheckCustomerID(int customerID)
         {
             if (customerRepo.GetCustomer(customerID) == null)
@@ -42,9 +47,36 @@ namespace Application
         {
             return customerRepo.GetCountOfCustommers();
         }
-		public string GetProducts()
-		{
-			return null;
-		}
+        public string GetProducts()
+        {
+            return null;
+        }
+
+        public string CreateOrderLine(int customerId)
+        {
+            string name = null;
+            object price = null; 
+            object quantity = null; 
+            string orderlineString = name + price + quantity;
+            productList = productRepo.GetAllProducts(customerId);
+            saleOrderLines = orderline.GetAllOrderLines(customerId);
+            while(name == null)
+            {
+                foreach (SaleOrderLine orderline in saleOrderLines)
+                {
+                    if(orderline.OrderLineId )
+                }
+            }
+            foreach (Product product in productList)
+            {
+                name = .Name;
+            }
+        }
     }
 }
+            
+
+
+
+    
+

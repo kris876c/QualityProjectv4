@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Application;
 
 namespace UI
 {
@@ -19,25 +20,28 @@ namespace UI
     /// </summary>
     public partial class NewOrderWindow : Window
     {
+        OrderLineRepo orderline = new OrderLineRepo();
         public NewOrderWindow()
         {
             InitializeComponent();
         }
-        private void button_Back_Click(object sender, RoutedEventArgs e)
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow main = new MainWindow();
             main.Show();
             this.Close();
         }
 
-        private void Tilføj_Produkt_Click(object sender, RoutedEventArgs e)
+        private void ProductList_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
-            this.ProductList.ItemsSource = new List<string>()
+            int kundeNr = int.Parse(kundeNrBox.Text);
+            foreach (object orderline in orderline.GetAllOrderLines)
             {
-            "carrot",
-            "fox",
-            "explorer"
-            };
+
+            }
+            ProductList.Items.Add()
         }
+
     }
 }

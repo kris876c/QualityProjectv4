@@ -44,6 +44,7 @@ namespace UI
                 {
 
                     orderwin.Show();
+                    orderwin.kundeNrBox.Text = Textbox1.Text;
                     this.Close();
                 }
                 else
