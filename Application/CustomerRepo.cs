@@ -33,5 +33,17 @@ namespace Application
         {
             return customerList.Count();
         }
+		public Customer GetSpecificCustomer(int id)
+		{
+			Customer customerID = null;
+			foreach (Customer customer in customerList)
+			{
+				if (customer.ID ==id)
+				{
+					customerID = customer;
+				}
+			}
+			return customerID;
+		}
     }
 }

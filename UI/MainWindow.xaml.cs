@@ -25,6 +25,7 @@ namespace UI
         NewOrderWindow orderwin = new NewOrderWindow();
         NewCustomerWindow customerwin = new NewCustomerWindow();
 		FindCustomerWindow findcustomerwin = new FindCustomerWindow();
+		ShowOrderWin showOrderWin = new ShowOrderWin();
         
         public MainWindow()
         {
@@ -42,14 +43,14 @@ namespace UI
             {
                 if (Controller.GetController().CheckCustomerID(int.Parse(Textbox1.Text)) == true)
                 {
-
+					orderwin.KundeIDtxtb.Text = Textbox1.Text;
                     orderwin.Show();
                     orderwin.kundeNrBox.Text = Textbox1.Text;
                     this.Close();
                 }
                 else
                 {
-                    customerwin.Show();
+                    customerwin.Show();				
                     this.Close();
                 }
             }
@@ -62,6 +63,12 @@ namespace UI
 		private void FindKundeKnap(object sender, RoutedEventArgs e)
 		{
 			findcustomerwin.Show();
+			this.Close();
+		}
+
+		private void VisOrdreKnap_Click(object sender, RoutedEventArgs e)
+		{
+			showOrderWin.Show();
 			this.Close();
 		}
 	}
