@@ -7,22 +7,26 @@ using Domain;
 
 namespace Application
 {
-	public class Controller
-	{
-		private static Controller instance;
-		protected Controller()
-		{
-		}
-		public static Controller GetController()
-		{
-			if(instance == null)
-			{
-				instance = new Controller();
-			}
-			return instance;
-		}
+    public class Controller
+    {
+        OrderLineRepo orderline = new OrderLineRepo();
         CustomerRepo customerRepo = new CustomerRepo();
-		OrderRepo orderRepo = new OrderRepo();
+        ProductRepo productRepo = new ProductRepo();
+        private List<SaleOrderLine> saleOrderLines;
+        private List<Product> productList;
+        private static Controller controller;
+        protected Controller()
+        {
+        }
+        public static Controller GetController()
+        {
+            if (controller == null)
+            {
+                controller = new Controller();
+            }
+            return controller;
+        }
+
         public bool CheckCustomerID(int customerID)
         {
             if (customerRepo.GetCustomer(customerID) == null)
@@ -43,27 +47,36 @@ namespace Application
         {
             return customerRepo.GetCountOfCustommers();
         }
-		public string GetProducts()
-		{
-			return null;
-		}
-		public int GetCountOfOrders()
-		{
-			return orderRepo.GetCountOfOrders()+1;
-		}
-		public void CreateOrdre(Customer customer, int orderId, string orderDate, string deliveryDate, bool picked)
-		{
-			Order order = new Order(customer, orderId, orderDate, deliveryDate, false);
-			orderRepo.AddOrder(order);
-		}
-		public Customer GetCustomerByID(int id)
-		{
-			return customerRepo.GetSpecificCustomer(id);
-		}
-		public List<Order> GetOrderList()
-		{
-			return orderRepo.GetOrderList();
-		}
+        public string GetProducts()
+        {
+            return null;
+        }
 
-	}
+        public string CreateOrderLine(int customerId)
+        {
+            string name = null;
+            string price = null; 
+            string quantity = null; 
+            string orderlineString = null;
+            productList = productRepo.GetAllProducts(customerId);
+            saleOrderLines = orderline.GetAllOrderLines(customerId);
+            while(orderlineString == null)
+            {
+                foreach (SaleOrderLine orderline in saleOrderLines)
+                {
+                    name = orderline.Product.Name;
+                    price = orderline.Price.ToString();
+                    quantity = orderline.Quantity.ToString();
+                    orderlineString = name + " " + price + " " + quantity + " ";
+                }
+            }
+            return orderlineString;
+        }
+    }
 }
+            
+
+
+
+    
+

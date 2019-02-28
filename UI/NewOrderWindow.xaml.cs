@@ -20,32 +20,23 @@ namespace UI
     /// </summary>
     public partial class NewOrderWindow : Window
     {
-		
-		public NewOrderWindow()
+        OrderLineRepo orderline = new OrderLineRepo();
+        public NewOrderWindow()
         {
             InitializeComponent();
-			
         }
-      
 
-		private void CreateOrder(object sender, RoutedEventArgs e)
-		{
-			MainWindow main = new MainWindow();
-			OrdreIDtxtb.Text = Controller.GetController().GetCountOfOrders().ToString();
-			BestillingsDatotxtb.Text = DateTime.Today.ToString();
-			LeveringsDatotxtb.Text = DateTime.Today.AddDays(5).ToString();
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            main.Show();
+            this.Close();
+        }
 
-			Controller.GetController().CreateOrdre(Controller.GetController().GetCustomerByID(int.Parse(KundeIDtxtb.Text)), 
-				int.Parse(OrdreIDtxtb.Text), BestillingsDatotxtb.Text, LeveringsDatotxtb.Text, false);
-
-		}
-
-		private void Button_Click(object sender, RoutedEventArgs e)
-		{
-			MainWindow main = new MainWindow();
-			main.Show();
-			this.Close();
-		}
-	}
+        private void ProductList_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            int kundeNr = int.Parse(kundeNrBox.Text);
+            ProductList.Items.Add(Controller.GetController().CreateOrderLine(kundeNr));
+        }
     }
-
+}
