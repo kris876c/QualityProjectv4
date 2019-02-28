@@ -60,6 +60,10 @@ namespace Application
 		{
 			return customerRepo.GetSpecificCustomer(id);
 		}
+		public List<Order> GetOrderList()
+		{
+			return orderRepo.GetOrderList();
+		}
 
 	}
 }

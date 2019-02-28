@@ -7,15 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Opret ny kunde" HorizontalAlignment="Left" Margin="364,173,0,0" VerticalAlignment="Top" Width="91" Height="30" Click="LavKundeKnap"/>
+        <Button Content="Opret ny kunde" HorizontalAlignment="Left" Margin="377,161,0,0" VerticalAlignment="Top" Width="91" Height="30" Click="LavKundeKnap"/>
         <Label Content="Indtast kundenr. for order" HorizontalAlignment="Left" Margin="184,119,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="Textbox1" HorizontalAlignment="Left" Height="23" Margin="184,145,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label Content="Register nyt kundenr." HorizontalAlignment="Left" Margin="363,119,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="___Register_Kunde_Box_" HorizontalAlignment="Left" Height="23" Margin="364,145,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="ModtagOrdre" Content="Modtag Ordre" HorizontalAlignment="Left" Margin="184,173,0,0" VerticalAlignment="Top" Width="91" Height="30" Click="ModtagOrdreKnap"/>
-        <Button Content="Find Kunde" HorizontalAlignment="Left" Margin="570,173,0,0" VerticalAlignment="Top" Width="91" Height="30" Click="FindKundeKnap"/>
-        <Label Content="Søg efter kunde" HorizontalAlignment="Left" Margin="570,142,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="VisOrdreKnap" Content="Vis ordre" HorizontalAlignment="Left" Margin="570,284,0,0" VerticalAlignment="Top" Width="75" Click="VisOrdreKnap_Click"/>
+        <Button x:Name="VisOrdreKnap" Content="Vis ordre" HorizontalAlignment="Left" Margin="522,161,0,0" VerticalAlignment="Top" Width="108" Click="VisOrdreKnap_Click" Height="30"/>
+        <Label Content="Vis Alle Ordre" HorizontalAlignment="Left" Margin="538,130,0,0" VerticalAlignment="Top"/>
 
 
     </Grid>

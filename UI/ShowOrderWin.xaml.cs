@@ -19,15 +19,31 @@ namespace UI
 	/// </summary>
 	public partial class ShowOrderWin : Window
 	{
+		OrderRepo orderrepo = new OrderRepo();
 		public ShowOrderWin()
 		{
-			InitializeComponent();
-			OrderRepo order = new OrderRepo();
-			foreach (var item in collection)
-			{
+			InitializeComponent();		
+		
+		}
 
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			
+			foreach (var order in Controller.GetController().GetOrderList())
+			{
+				OrderDatetxtb.Text += order.OrderDate+"\n";
+				DeliveryDatetxtb.Text += order.DeliveryDate + "\n";
+				OrderIDtxtb.Text += order.OrderId + "\n";
+				CustomerIDtxtb.Text += order.Customer.ID + "\n";
+				Pickedtxtb.Text += "False\n";
 			}
-			OrderDatetxtb.Text = 
+		}
+
+		private void Button_Click_1(object sender, RoutedEventArgs e)
+		{
+			MainWindow main = new MainWindow();
+			main.Show();
+			this.Close();
 		}
 	}
 }

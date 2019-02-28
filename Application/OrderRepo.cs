@@ -1,19 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Domain;
 
 namespace Application
 {
-    public class OrderRepo
-    {
+
+	public class OrderRepo
+    { 
 		private List<Order> orderList = new List<Order>();
 
 		public void AddOrder(Order order)
 		{
 			orderList.Add(order);
+		}
+		
+		public List<Order> GetOrderList()
+		{		
+			return orderList;
 		}
 
 
