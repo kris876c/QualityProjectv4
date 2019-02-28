@@ -35,8 +35,8 @@ namespace UI
 
         private void ProductList_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
-            int kundeNr = int.Parse(kundeNrBox.Text);
-            ProductList.Items.Add(Controller.GetController().CreateOrderLine(kundeNr));
+            //int kundeNr = int.Parse(kundeNrBox.Text);
+            //ProductList.Items.Add(Controller.GetController().CreateOrderLine(kundeNr));
         }
     }
 }
