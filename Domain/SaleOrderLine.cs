@@ -11,12 +11,14 @@ namespace Domain
 		public Product Product { get; set; }
 		public int Quantity { get; set; }
 		public int Price { get; set; }
+        public int OrderLineId { get; set; }
 
-		public SaleOrderLine(Product product, int quantity, int price)
+		public SaleOrderLine(Product product, int quantity, int price, int orderLineId)
 		{
 			Product = product;
 			Quantity = quantity;
-			Price = price; 
+			Price = price;
+            OrderLineId = orderLineId;
 		}
 	}
 }

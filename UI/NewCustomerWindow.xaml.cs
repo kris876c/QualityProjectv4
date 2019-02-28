@@ -25,10 +25,9 @@ namespace UI
         {
             InitializeComponent();
         }
-
        
 
-        private void button_Back_Click(object sender, RoutedEventArgs e)
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow main = new MainWindow();
             main.Show();

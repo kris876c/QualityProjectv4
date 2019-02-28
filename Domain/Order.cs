@@ -24,20 +24,20 @@ namespace Domain
 			Picked = picked;
 		}
 
-        public void AddOrderLine(Product product, int quantity, int price)
-        {
-            SaleOrderLine saleOrderLine = new SaleOrderLine(product, quantity, price);
-            orderlines.Add(saleOrderLine);
-        }
+        //public void AddOrderLine(Product product, int quantity, int price, int orderId)
+        //{
+        //    SaleOrderLine saleOrderLine = new SaleOrderLine(product, quantity, price, orderId);
+        //    orderlines.Add(saleOrderLine);
+        //}
 
-        public void RemoveOrderLines(int index)
-        {
-            orderlines.RemoveAt(index);
-        }
+        //public void RemoveOrderLines(int index)
+        //{
+        //    orderlines.RemoveAt(index);
+        //}
 
-        public List<SaleOrderLine> GetOrderLines()
-        {
-            return orderlines;
-        }
+        //public List<SaleOrderLine> GetOrderLines()
+        //{
+        //    return orderlines;
+        //}
     }
 }
